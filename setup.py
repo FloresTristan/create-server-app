@@ -2,8 +2,9 @@ from setuptools import setup, find_packages
 
 setup(
     name="create-server-app",
-    version="1.0.5",
+    version="1.0.6.5",
     description="A CLI tool to create a server app project.",
+    long_description=open("README.md").read(),
     packages=find_packages(),
     entry_points={
         "console_scripts": [
@@ -22,4 +23,5 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
     ],
+    url='https://github.com/FloresTristan/create-server-app'
 )
