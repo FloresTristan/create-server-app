@@ -1,3 +1,4 @@
+LICENSE
 setup.py
 create_server_app/AppConfig.py
 create_server_app/__init__.py
@@ -8,6 +9,7 @@ create_server_app/mongoDb.py
 create_server_app/objects.py
 create_server_app/requirements.py
 create_server_app/test_functions.py
+create_server_app/vscodeTasks.py
 create_server_app.egg-info/PKG-INFO
 create_server_app.egg-info/SOURCES.txt
 create_server_app.egg-info/dependency_links.txt
