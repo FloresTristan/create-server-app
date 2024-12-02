@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="create-server-app",
-    version="1.0.6.7",
+    version="1.0.6.9.beta-3",
     description="A CLI tool to create a server app project.",
     long_description=open("README.md").read(),
     packages=find_packages(),

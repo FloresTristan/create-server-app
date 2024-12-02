@@ -4,11 +4,14 @@ create_server_app/AppConfig.py
 create_server_app/__init__.py
 create_server_app/app.py
 create_server_app/cli.py
+create_server_app/conftest.py
 create_server_app/create_server.py
 create_server_app/mongoDb.py
 create_server_app/objects.py
 create_server_app/requirements.py
 create_server_app/test_functions.py
+create_server_app/updateSchema.py
+create_server_app/utils.py
 create_server_app/vscodeTasks.py
 create_server_app.egg-info/PKG-INFO
 create_server_app.egg-info/SOURCES.txt

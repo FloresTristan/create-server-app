@@ -7,7 +7,7 @@ def create_vscode_tasks(project_name):
       {
         "label": "Activate venv",
         "type": "shell",
-        "command": "venv\\Scripts\\activate",
+        "command": "ven//Script//activate",
         "options": {
           "cwd": "${workspaceFolder}/server",
           "shell": {
@@ -28,7 +28,7 @@ def create_vscode_tasks(project_name):
       {
         "label": "Server app.py",
         "type": "shell",
-        "command": "venv\\Scripts\\activate && python app.py",
+        "command": "ven//Script//activate && python app.py",
         "options": {
           "cwd": "${workspaceFolder}/server",
           "shell": {
@@ -50,7 +50,7 @@ def create_vscode_tasks(project_name):
       {
         "label": "pytest",
         "type": "shell",
-        "command": "venv\\Scripts\\activate && pytest --cov=objects --cov-report=term-missing",
+        "command": "ven//Script//activate && pytest --cov=objects --cov-report=term-missing",
         "options": {
           "cwd": "${workspaceFolder}/server",
           "shell": {

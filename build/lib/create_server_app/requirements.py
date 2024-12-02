@@ -24,6 +24,7 @@ def create_requirements_file(project_name):
 pytest==8.3.3
 pytest-cov==6.0.0
 pymongo==4.8.0
+pydantic
 """
     requirements_path = os.path.join(project_name, 'requirements.txt')
     with open(requirements_path, 'w') as f:

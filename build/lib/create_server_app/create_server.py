@@ -1,6 +1,5 @@
 import os
-from create_server_app import mongoDb, AppConfig, app, requirements, objects, test_functions
-import vscodeTasks
+from create_server_app import mongoDb, AppConfig, app, requirements, objects, test_functions, vscodeTasks, updateSchema, conftest, utils
 
 def create_server_project(project_name):
     # Define the directory structure for the project
@@ -37,6 +36,15 @@ def create_server_project(project_name):
 
     # Create a vscode tasks directory
     vscodeTasks.create_vscode_tasks(project_name)
+
+    # Create a schema update file
+    updateSchema.create_update_schema_file(server)
+
+    # Create a conftest file
+    conftest.create_conftest_file(server)
+
+    # Create a utils file
+    utils.create_utils_file(server)
 
     # Create README.md with basic instructions
     readme_content = f"# {project_name}\n\nA simple Flask server template with MongoDB integration."
