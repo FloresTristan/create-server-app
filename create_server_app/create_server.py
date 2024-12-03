@@ -1,13 +1,12 @@
 import os
-from create_server_app import mongoDb, AppConfig, app, requirements, objects, test_functions, vscodeTasks, updateSchema, conftest, utils
+from create_server_app import mongoDb, AppConfig, app, requirements, objects, test_functions, vscodeTasks, updateSchema, conftest, utils, create_nextjs, dataChecker, schemas
 
-def create_server_project(project_name):
+def create_server_project():
     # Define the directory structure for the project
-    server = os.path.join(project_name, 'server')
-    client = os.path.join(project_name, 'client')
-    vscode = os.path.join(project_name, '.vscode')
+    server = os.path.join('server')
+    client = os.path.join('client')
+    vscode = os.path.join('.vscode')
     dirs = [
-        project_name,
         server,
         client,
         vscode,
@@ -35,7 +34,7 @@ def create_server_project(project_name):
     test_functions.create_test_functions_file(server)
 
     # Create a vscode tasks directory
-    vscodeTasks.create_vscode_tasks(project_name)
+    vscodeTasks.create_vscode_tasks()
 
     # Create a schema update file
     updateSchema.create_update_schema_file(server)
@@ -46,13 +45,22 @@ def create_server_project(project_name):
     # Create a utils file
     utils.create_utils_file(server)
 
+    # Create a dataChecker file
+    dataChecker.create_data_checker_file(server)
+
+    # Create a schemas folder
+    schemas.create_schemas_folder(server)
+
+    # Create a client app
+    create_nextjs.create_next(client)
+
     # Create README.md with basic instructions
-    readme_content = f"# {project_name}\n\nA simple Flask server template with MongoDB integration."
-    with open(os.path.join(project_name, 'README.md'), 'w') as f:
+    readme_content = f"# \n\nA simple Flask server template with MongoDB integration."
+    with open(os.path.join( 'README.md'), 'w') as f:
         f.write(readme_content)
 
-    print(f"Project {project_name} created successfully!")
+    print(f"Project created successfully!")
 
 if __name__ == '__main__':
-    project_name = input("Enter the project name: ")
-    create_server_project(project_name)
+    #  = input("Enter the project name: ")
+    create_server_project()

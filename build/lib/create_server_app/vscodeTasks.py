@@ -1,6 +1,6 @@
 import os
 
-def create_vscode_tasks(project_name):
+def create_vscode_tasks():
     vscode_tasks_content = """{
     "version": "2.0.0",
     "tasks": [
@@ -157,8 +157,8 @@ def create_vscode_tasks(project_name):
   }
   
 """
-    with open(os.path.join(project_name, '.vscode', 'launch.json'), 'w') as f:
+    with open(os.path.join('.vscode', 'launch.json'), 'w') as f:
         f.write(vscode_launch_content)
     
-    with open(os.path.join(project_name, '.vscode', 'tasks.json'), 'w') as f:
+    with open(os.path.join('.vscode', 'tasks.json'), 'w') as f:
         f.write(vscode_tasks_content)
