@@ -136,7 +136,7 @@ def create_vscode_tasks():
             "runtimeExecutable": "bash",
             "runtimeArgs": [
               "-c",
-              "cd client/accounting && npm run test App"
+              "cd client && npm run test App"
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"

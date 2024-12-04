@@ -1,5 +1,7 @@
 import os
 from create_server_app import mongoDb, AppConfig, app, requirements, objects, test_functions, vscodeTasks, updateSchema, conftest, utils, create_nextjs, dataChecker, schemas
+import subprocess
+
 
 def create_server_project():
     # Define the directory structure for the project
@@ -51,16 +53,31 @@ def create_server_project():
     # Create a schemas folder
     schemas.create_schemas_folder(server)
 
+    # create venv
+    # activate venv
+    # install requirements
+    # import subprocess
+    subprocess.run([
+        "cmd", "/c",
+        "python -m venv venv && venv\\Scripts\\activate && pip install -r requirements.txt"
+    ],
+                   cwd=server)
+
     # Create a client app
     create_nextjs.create_next(client)
 
     # Create README.md with basic instructions
     readme_content = f"# \n\nA simple Flask server template with MongoDB integration."
-    with open(os.path.join( 'README.md'), 'w') as f:
+    with open(os.path.join('README.md'), 'w') as f:
         f.write(readme_content)
 
     print(f"Project created successfully!")
 
+
 if __name__ == '__main__':
     #  = input("Enter the project name: ")
     create_server_project()
+    # server = os.path.join('server')
+    # server = os.getcwd() + '\\server'
+    # print(server)
+    # subprocess.run(["python", "-m", "venv", "venv"], cwd=server)

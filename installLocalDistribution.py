@@ -25,5 +25,11 @@ def getLatestWheel():
     return latestFile
 
 
-command = 'pip install ' + getLatestWheel()
-process = subprocess.run(command, shell=True, check=True, text=True)
+process = subprocess.run('pip uninstall ' + getLatestWheel() + ' -y',
+                         shell=True,
+                         check=True,
+                         text=True)
+process = subprocess.run('pip install ' + getLatestWheel(),
+                         shell=True,
+                         check=True,
+                         text=True)
