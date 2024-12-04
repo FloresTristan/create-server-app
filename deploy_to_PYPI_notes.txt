@@ -1,0 +1,5 @@
+command to deploy to PYPI
+twine upload dist/*
+
+command to deploy to test PYPI
+twine upload --repository testpypi dist/*
