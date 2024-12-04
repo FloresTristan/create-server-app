@@ -3,7 +3,7 @@ from create_server_app import mongoDb, AppConfig, app, requirements, objects, te
 import subprocess
 
 
-def create_server_project():
+def create_server_project(projectName):
     # Define the directory structure for the project
     server = os.path.join('server')
     client = os.path.join('client')
@@ -21,7 +21,7 @@ def create_server_project():
     app.create_app_routes(server)
 
     # create an AppConfig for the project
-    AppConfig.create_app_config(server)
+    AppConfig.create_app_config(server,projectName)
 
     # create a requirements file
     requirements.create_requirements_file(server)

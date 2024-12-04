@@ -1,14 +1,14 @@
 import os
 
-def create_mongoDb(project_name):
+
+def create_mongoDb(serverPath):
     # Create a sample MongoDB connection file in app/models/mongo.py
-    mongo_content = """from pymongo import MongoClient
-from pymongo.mongo_client import MongoClient
+    mongo_content = """
+from pymongo import MongoClient
 from pymongo.server_api import ServerApi
-import AppConfig
+from AppConfig import AppConfig
 import time
 import os
-# from pubSub import PubSub
 
 
 class mongoDb:
@@ -16,18 +16,22 @@ class mongoDb:
     def __init__(self):
     
         if AppConfig().getEnvironment() == 'cloudprod':
-            uri = os.getenv('MONGO_URI_ACCOUNTING')
+            uri = '' #ENTER YOUR URI HERE
             
-            if uri is None:
+            if uri == '':
                 raise Exception(
-                    'MONGO_URI_ACCOUNTING environment variable is not set')
+                    'MONGODB PRODUCTION URI variable is not set')
+
 
             self.client = MongoClient(uri,
                                       server_api=ServerApi('1'),
                                       tz_aware=True)
             databaseName = ''
         if AppConfig().getEnvironment() == 'clouddev':
-            uri = "fill-with-own-db-uri"
+            uri = '' #ENTER YOUR URI HERE
+            if uri == '':
+                raise Exception(
+                    'MONGODB DEVELOPMENT URI variable is not set')
             self.client = MongoClient(uri,
                                       server_api=ServerApi('1'),
                                       tz_aware=True)
@@ -36,13 +40,13 @@ class mongoDb:
         # testEnvironment is used for automated testing while the actual is used for production / development
         if AppConfig().getEnvironment() == 'localdev':
             self.client = MongoClient('localhost', 27017, tz_aware=True)
-            databaseName = 'testEmployeeProfile'
+            databaseName = AppConfig().getProjectName()
         if AppConfig().getEnvironment() == 'localTest':
             self.client = MongoClient('localhost', 27017, tz_aware=True)
-            databaseName = 'testEmployeeProfile'
+            databaseName = AppConfig().getProjectName()
         if AppConfig().getEnvironment() == 'localprod':
             self.client = MongoClient('localhost', 27017, tz_aware=True)
-            databaseName = 'testEmployeeProfile'
+            databaseName = AppConfig().getProjectName()
 
         self.db = self.client[databaseName]
 
@@ -325,5 +329,5 @@ if __name__ == '__main__':
     pass
 
 """
-    with open(os.path.join(project_name, 'mongoDb.py'), 'w') as f:
+    with open(os.path.join(serverPath, 'mongoDb.py'), 'w') as f:
         f.write(mongo_content)

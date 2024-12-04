@@ -1,10 +1,18 @@
 import os
 
-def create_app_config(project_name):
-    app_config_content = """ 
+
+def create_app_config(projectPath, projectName):
+    app_config_content = f""" 
 import os
 import datetime
 
+class ProjectName:
+    def __init__(self):
+        super().__init__()
+        self.projectName = '{projectName}'
+        
+    def getProjectName(self):
+        return self.projectName
 
 class Timezone:
 
@@ -72,7 +80,7 @@ class PubSubConfig():
         return self.PROJECT_ID
 
 
-class AppConfig(Environment, PubSubConfig, Timezone):
+class AppConfig(Environment, PubSubConfig, Timezone,ProjectName):
 
     def __init__(self):
         super().__init__()
@@ -82,5 +90,5 @@ if __name__ == "__main__":
     appConfig = AppConfig()
 
 """
-    with open(os.path.join(project_name, 'AppConfig.py'), 'w') as f:
+    with open(os.path.join(projectPath, 'AppConfig.py'), 'w') as f:
         f.write(app_config_content)
