@@ -11,6 +11,7 @@ create_server_app/dataChecker.py
 create_server_app/mongoDb.py
 create_server_app/objects.py
 create_server_app/requirements.py
+create_server_app/schemas.py
 create_server_app/test_functions.py
 create_server_app/updateSchema.py
 create_server_app/utils.py

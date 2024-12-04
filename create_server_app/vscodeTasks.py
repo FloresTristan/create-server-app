@@ -7,13 +7,13 @@ def create_vscode_tasks():
       {
         "label": "Activate venv",
         "type": "shell",
-        "command": "ven\\Script\\activate",
+        "command": "ven\\\\Script\\\\activate",
         "options": {
-          "cwd": "${workspaceFolder}\\server",
+          "cwd": "${workspaceFolder}\\\\server",
           "shell": {
             "executable": "cmd.exe",
             "args": [
-              "\c"
+              "/c"
             ]
           }
         },
@@ -28,13 +28,13 @@ def create_vscode_tasks():
       {
         "label": "Server app.py",
         "type": "shell",
-        "command": "ven\\Script\\activate && python app.py",
+        "command": "ven\\\\Script\\\\activate && python app.py",
         "options": {
-          "cwd": "${workspaceFolder}\\server",
+          "cwd": "${workspaceFolder}\\\\server",
           "shell": {
             "executable": "cmd.exe",
             "args": [
-              "\c"
+              "/c"
             ]
           }
         },
@@ -50,13 +50,13 @@ def create_vscode_tasks():
       {
         "label": "pytest",
         "type": "shell",
-        "command": "ven\\Script\\activate && pytest --cov=objects --cov-report=term-missing",
+        "command": "ven\\\\Script\\\\activate && pytest --cov=objects --cov-report=term-missing",
         "options": {
-          "cwd": "${workspaceFolder}\\server",
+          "cwd": "${workspaceFolder}\\\\server",
           "shell": {
             "executable": "cmd.exe",
             "args": [
-              "\c"
+              "/c"
             ]
           }
         },
@@ -74,11 +74,11 @@ def create_vscode_tasks():
         "type": "shell",
         "command": "netlify dev",
         "options": {
-          "cwd": "${workspaceFolder}\\Client\\accounting",
+          "cwd": "${workspaceFolder}\\\\Client\\\\accounting",
           "shell": {
             "executable": "cmd.exe",
             "args": [
-              "\c"
+              "/c"
             ]
           }
         },
@@ -96,11 +96,11 @@ def create_vscode_tasks():
         "type": "shell",
         "command": "npm run test App",
         "options": {
-          "cwd": "${workspaceFolder}\\client\\accounting",
+          "cwd": "${workspaceFolder}\\\\client\\\\accounting",
           "shell": {
             "executable": "cmd.exe",
             "args": [
-              "\c"
+              "/c"
             ]
           }
         },
@@ -124,7 +124,7 @@ def create_vscode_tasks():
         "name": "Server Debug app.py",
         "type": "debugpy",
         "request": "launch",
-        "program": "${workspaceFolder}\\server\\app.py",
+        "program": "${workspaceFolder}/server/app.py",
         "console": "integratedTerminal",
         "preLaunchTask": "Activate venv"
         },
@@ -135,7 +135,7 @@ def create_vscode_tasks():
             "runtimeExecutable": "bash",
             "runtimeArgs": [
               "-c",
-              "cd client\\accounting && npm run test App"
+              "cd client/accounting && npm run test App"
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"
@@ -144,12 +144,12 @@ def create_vscode_tasks():
             "name": "Launch Chrome against localhost",
             "type": "chrome",
             "request": "launch",
-            "url": "http:\\localhost:5173",
-            "webRoot": "${workspaceFolder}\\src",
+            "url": "http://localhost:5173",
+            "webRoot": "${workspaceFolder}/src",
             "sourceMaps": true,
             "trace": true,
             "sourceMapPathOverrides": {
-              "webpack:\\\src\*": "${webRoot}\\*"
+              "webpack:///src/*": "${webRoot}/*"
             }
           }
     ]

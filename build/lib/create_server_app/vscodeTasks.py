@@ -7,9 +7,9 @@ def create_vscode_tasks():
       {
         "label": "Activate venv",
         "type": "shell",
-        "command": "ven//Script//activate",
+        "command": "ven\\\\Script\\\\activate",
         "options": {
-          "cwd": "${workspaceFolder}/server",
+          "cwd": "${workspaceFolder}\\\\server",
           "shell": {
             "executable": "cmd.exe",
             "args": [
@@ -28,9 +28,9 @@ def create_vscode_tasks():
       {
         "label": "Server app.py",
         "type": "shell",
-        "command": "ven//Script//activate && python app.py",
+        "command": "ven\\\\Script\\\\activate && python app.py",
         "options": {
-          "cwd": "${workspaceFolder}/server",
+          "cwd": "${workspaceFolder}\\\\server",
           "shell": {
             "executable": "cmd.exe",
             "args": [
@@ -50,9 +50,9 @@ def create_vscode_tasks():
       {
         "label": "pytest",
         "type": "shell",
-        "command": "ven//Script//activate && pytest --cov=objects --cov-report=term-missing",
+        "command": "ven\\\\Script\\\\activate && pytest --cov=objects --cov-report=term-missing",
         "options": {
-          "cwd": "${workspaceFolder}/server",
+          "cwd": "${workspaceFolder}\\\\server",
           "shell": {
             "executable": "cmd.exe",
             "args": [
@@ -74,7 +74,7 @@ def create_vscode_tasks():
         "type": "shell",
         "command": "netlify dev",
         "options": {
-          "cwd": "${workspaceFolder}/Client/accounting",
+          "cwd": "${workspaceFolder}\\\\Client\\\\accounting",
           "shell": {
             "executable": "cmd.exe",
             "args": [
@@ -96,7 +96,7 @@ def create_vscode_tasks():
         "type": "shell",
         "command": "npm run test App",
         "options": {
-          "cwd": "${workspaceFolder}/client/accounting",
+          "cwd": "${workspaceFolder}\\\\client\\\\accounting",
           "shell": {
             "executable": "cmd.exe",
             "args": [
@@ -152,10 +152,8 @@ def create_vscode_tasks():
               "webpack:///src/*": "${webRoot}/*"
             }
           }
-       
     ]
   }
-  
 """
     with open(os.path.join('.vscode', 'launch.json'), 'w') as f:
         f.write(vscode_launch_content)

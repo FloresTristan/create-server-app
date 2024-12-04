@@ -7,15 +7,16 @@ from objects import *
 import json
 
 
-if os.path.exists(os.path.join(os.getcwd(), 'client//.next')):
+if not os.path.exists(os.path.join(os.getcwd(), 'client', 'next.config.ts')):
+    print("\nNextJs is not installed. Please install next.js in the client directory\n")
     exit()
 
 # List of classes to generate JSON schemas for
 classes = []
 
 cwd = os.getcwd()
-input_dir = os.path.join(os.getcwd() + '//Server//schemas')
-output_dir = os.path.join(os.getcwd() + '//src//ap//schemas')
+input_dir = os.path.join(os.getcwd() + '//server//schemas')
+output_dir = os.path.join(os.getcwd() + '//client//app//schemas')
 
 for x in classes:
     className = x.__name__

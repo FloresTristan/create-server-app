@@ -1,5 +1,5 @@
 import os
-from create_server_app import mongoDb, AppConfig, app, requirements, objects, test_functions, vscodeTasks, updateSchema, conftest, utils, create_nextjs, dataChecker
+from create_server_app import mongoDb, AppConfig, app, requirements, objects, test_functions, vscodeTasks, updateSchema, conftest, utils, create_nextjs, dataChecker, schemas
 
 def create_server_project():
     # Define the directory structure for the project
@@ -47,6 +47,9 @@ def create_server_project():
 
     # Create a dataChecker file
     dataChecker.create_data_checker_file(server)
+
+    # Create a schemas folder
+    schemas.create_schemas_folder(server)
 
     # Create a client app
     create_nextjs.create_next(client)
