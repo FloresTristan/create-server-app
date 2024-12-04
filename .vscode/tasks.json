@@ -1,0 +1,49 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "create distribution",
+        "type": "shell",
+        "command": "venv\\Scripts\\activate && python setup.py sdist bdist_wheel",
+        "options": {
+          "cwd": "${workspaceFolder}",
+          "shell": {
+            "executable": "cmd.exe",
+            "args": [
+              "/c"
+            ]
+          }
+        },
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": true,
+          "panel": "shared"
+        },
+        "problemMatcher": [],
+        "detail": "Create dist folder"
+      },
+      {
+        "label": "install local distibution",
+        "type": "shell",
+        "command": "python installLocalDistribution.py",
+        "options": {
+          "cwd": "${workspaceFolder}",
+          "shell": {
+            "executable": "cmd.exe",
+            "args": [
+              "/c"
+            ]
+          }
+        },
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": true,
+          "panel": "shared"
+        },
+        "problemMatcher": [],
+        "detail": "Create dist folder"
+      },
+    ]
+}
