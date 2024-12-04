@@ -8,7 +8,7 @@ def create_vscode_tasks():
       {
         "label": "Activate venv",
         "type": "shell",
-        "command": "ven\\\\Script\\\\activate",
+        "command": "venv\\\\Scripts\\\\activate",
         "options": {
           "cwd": "${workspaceFolder}\\\\server",
           "shell": {
@@ -29,7 +29,7 @@ def create_vscode_tasks():
       {
         "label": "Server app.py",
         "type": "shell",
-        "command": "ven\\\\Script\\\\activate && python app.py",
+        "command": "venv\\\\Scripts\\\\activate && python app.py",
         "options": {
           "cwd": "${workspaceFolder}\\\\server",
           "shell": {
@@ -97,7 +97,7 @@ def create_vscode_tasks():
         "type": "shell",
         "command": "npm run test App",
         "options": {
-          "cwd": "${workspaceFolder}\\\\client\\\\accounting",
+          "cwd": "${workspaceFolder}\\\\client",
           "shell": {
             "executable": "cmd.exe",
             "args": [
