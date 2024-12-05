@@ -1,5 +1,6 @@
 import os
 
+
 def create_update_schema_file(server):
     update_schema_content = """import os
 import subprocess
@@ -8,7 +9,7 @@ import json
 
 
 if not os.path.exists(os.path.join(os.getcwd(), 'client', 'next.config.ts')):
-    print("\nNextJs is not installed. Please install next.js in the client directory\n")
+    print("NextJs is not installed. Please install next.js in the client directory")
     exit()
 
 # List of classes to generate JSON schemas for
