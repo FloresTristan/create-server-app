@@ -1,5 +1,6 @@
 import os
 
+
 def create_utils_file(server):
     utils_content = """import random
 import string
@@ -18,6 +19,8 @@ def updateData(dataToUpdate, updateQuery, unupdatableKeys):
         for k in keys[:-1]:
             data = data.setdefault(k, {})
         data[keys[-1]] = value
+        
+    unupdatableKeys = unupdatableKeys + ['_id', '_version' , 'id', 'version']
 
     for key, value in updateQuery.items():
         if key in unupdatableKeys:
