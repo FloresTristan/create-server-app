@@ -204,6 +204,9 @@ class mongoDb:
 
         # we update the query with the new version
         if checkVersion == True:
+            newVersion = latestData['_version'] + 1
+            oldVersion = newVersion - 1
+            new_values['_version'] = newVersion
             query['_version'] = oldVersion
         else:
             if '_version' in query:
